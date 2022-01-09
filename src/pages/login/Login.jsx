@@ -1,24 +1,29 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
-import login from "../../assets/images/login.svg";
+import loginimg from "../../assets/images/login.svg";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/userSlice";
+import "./Login.css";
+
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const inputRef = useRef();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isPasswdVisible, setisPasswdVisible] = useState(false);
-  const [creds, setcreds] = useState({
+  const creds = {
     username: "Sourav",
     password: "Sourav@10",
-  });
+  };
   useEffect(() => {
     inputRef.current.focus();
   }, []);
   const handleLogin = (e) => {
     e.preventDefault();
     if (creds.username === username && creds.password === password) {
+      dispatch(login({ username, password }));
       navigate("/home");
       toast.success("Authenticated");
     } else if (username === "" && password === "") {
@@ -30,10 +35,7 @@ const Login = () => {
   return (
     <div className="login_bg">
       <div className="login_wrapper">
-        <div className="login_header">
-          <img src={login} alt="login" />
-          <h4>Sign In to your account</h4>
-        </div>
+        <LoginHeader />
         <form onSubmit={handleLogin}>
           <div className="login_content">
             <input
@@ -68,6 +70,15 @@ const Login = () => {
       </div>
     </div>
   );
+
+  function LoginHeader() {
+    return (
+      <div className="login_header">
+        <img src={loginimg} alt="login" />
+        <h4>Sign In to your account</h4>
+      </div>
+    );
+  }
 };
 
 export default Login;

@@ -6,9 +6,10 @@ import Home from "./pages/home/Home";
 import Loader from "./components/loader/Loader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import store from "./redux/Store.js";
 function App() {
   return (
-    <>
+    <Provider store={store}>
       {/* <Loader /> */}
       <ToastContainer
         position="top-right"
@@ -26,7 +27,7 @@ function App() {
           <Route path="/home" element={<Home />} />
         </Routes>
       </Router>
-    </>
+    </Provider>
   );
 }
 
