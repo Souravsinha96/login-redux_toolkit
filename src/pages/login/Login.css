@@ -1,0 +1,80 @@
+.login_bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #fff
+    url(https://kinneygroup.com/wp-content/uploads/2019/10/fw-bg-gradient-1024x576.png)
+    center center/cover no-repeat;
+}
+.login_wrapper {
+  background-color: #fff;
+  width: 30em;
+  height: 30em;
+  border-radius: 10px;
+}
+.login_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  padding: 1em;
+}
+.login_header > img {
+  width: 10em;
+}
+.login_content {
+  padding: 1.5em 1em 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_content > input {
+  padding: 0.5em;
+  width: 20em;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+.password_show {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 5em;
+}
+.password_show > input {
+  transform: scale(1.1);
+  cursor: pointer;
+  accent-color: green;
+}
+.password_show > label {
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.login_button {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+.login_button > input {
+  background-color: cadetblue;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  width: 20em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.login_button > input:hover {
+  transform: scale(1.05);
+}
+.login_content > input,
+.login_button > input,
+.password_show > input:focus-within {
+  outline: none;
+}
