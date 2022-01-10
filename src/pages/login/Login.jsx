@@ -1,18 +1,21 @@
 import { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import loginimg from "../../assets/images/login.svg";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { login } from "../../redux/userSlice";
+import { login } from "../../redux/slices/userSlice";
 import "./Login.css";
+import { loading } from "../../redux/slices/loaderSlice";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useDispatch();
   const inputRef = useRef();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isPasswdVisible, setisPasswdVisible] = useState(false);
+  const from = location.state?.from?.pathname || "/home";
   const creds = {
     username: "Sourav",
     password: "Sourav@10",
@@ -20,11 +23,17 @@ const Login = () => {
   useEffect(() => {
     inputRef.current.focus();
   }, []);
+
   const handleLogin = (e) => {
     e.preventDefault();
     if (creds.username === username && creds.password === password) {
-      dispatch(login({ username, password }));
-      navigate("/home");
+      dispatch(loading(true));
+      setTimeout(() => {
+        dispatch(login(true));
+        dispatch(loading(false));
+        navigate(from, { replace: true });
+      }, 1000);
+
       toast.success("Authenticated");
     } else if (username === "" && password === "") {
       toast.error("Please enter  username & password");
