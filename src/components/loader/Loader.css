@@ -1,14 +1,16 @@
 .loader_wrapper {
+  position: absolute;
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .loader {
-  border: 10px solid #f3f3f3;
-  border-top: 10px solid #3498db;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
   border-radius: 50%;
   width: 80px;
   height: 80px;

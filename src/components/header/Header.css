@@ -6,3 +6,12 @@ nav {
   justify-content: space-between;
   padding: 1em;
 }
+.nav_button {
+  outline: none;
+  background-color: coral;
+  border-radius: 9999px;
+  border: 0;
+  padding: 0.5em 1em;
+  color: #fff;
+  cursor: pointer;
+}

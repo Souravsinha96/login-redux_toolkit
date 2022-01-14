@@ -17,8 +17,8 @@ const Login = () => {
   const [isPasswdVisible, setisPasswdVisible] = useState(false);
   const from = location.state?.from?.pathname || "/home";
   const creds = {
-    username: "Sourav",
-    password: "Sourav@10",
+    username: "S",
+    password: "S",
   };
   useEffect(() => {
     inputRef.current.focus();
