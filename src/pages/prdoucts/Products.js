@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Header from "../../components/header/Header";
 import { fetchProducts } from "../../redux/actions/productsActions";
 
 const Product = () => {
@@ -16,7 +15,6 @@ const Product = () => {
   };
   return (
     <div>
-      <Header />
       {data.map((item) => {
         return (
           <ul key={item.id}>

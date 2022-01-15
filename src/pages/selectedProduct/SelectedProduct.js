@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSelectedProducts } from "../../redux/actions/productsActions";
 import { removeSelectedProduct } from "../../redux/slices/productsSlice";
-import Header from "../../components/header/Header";
 
 const SelectedProduct = () => {
   const dispatch = useDispatch();
@@ -17,7 +16,6 @@ const SelectedProduct = () => {
 
   return (
     <div>
-      <Header />
       <ul>
         <li>{data?.title}</li>
         <li>{data?.description}</li>

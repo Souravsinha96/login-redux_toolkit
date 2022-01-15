@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   removeSelectedProduct,
   removeTotalProducts,
@@ -20,7 +20,11 @@ const Header = () => {
   return (
     <nav>
       <div className="nav_header">
-        <h1>Header</h1>
+        <div className="nav_links">
+          <Link to="/home">Home</Link>
+          <Link to="/products">Products</Link>
+        </div>
+
         <button className="nav_button" onClick={handleLogout}>
           Logout
         </button>

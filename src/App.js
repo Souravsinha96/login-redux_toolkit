@@ -8,6 +8,7 @@ import AuthorizedRoute from "./components/AuthorizedRoute";
 import Products from "./pages/prdoucts/Products";
 import SelectedProduct from "./pages/selectedProduct/SelectedProduct";
 import "./App.css";
+import Header from "./components/header/Header";
 function App() {
   return (
     <>
@@ -24,9 +25,33 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route element={<AuthorizedRoute />}>
-            <Route path="home" element={<Home />} />
-            <Route path="products" element={<Products />} />
-            <Route path="products/:id" element={<SelectedProduct />} />
+            <Route
+              path="home"
+              element={
+                <>
+                  <Header />
+                  <Home />
+                </>
+              }
+            />
+            <Route
+              path="products"
+              element={
+                <>
+                  <Header />
+                  <Products />
+                </>
+              }
+            />
+            <Route
+              path="products/:id"
+              element={
+                <>
+                  <Header />
+                  <SelectedProduct />
+                </>
+              }
+            />
           </Route>
         </Routes>
       </Router>

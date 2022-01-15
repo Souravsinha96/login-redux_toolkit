@@ -1,0 +1,9 @@
+.home {
+  width: 100vw;
+  height: 92vh;
+  background-color: cornflowerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}

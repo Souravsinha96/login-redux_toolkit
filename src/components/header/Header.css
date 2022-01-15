@@ -1,11 +1,19 @@
 nav {
-  background-color: cadetblue;
+  background-color: rgb(173, 160, 160);
+  color: black;
+  height: 8vh;
 }
 .nav_header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1em;
 }
+.nav_links > a {
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
 .nav_button {
   outline: none;
   background-color: coral;
